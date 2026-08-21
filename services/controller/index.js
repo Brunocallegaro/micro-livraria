@@ -41,7 +41,12 @@ app.get('/shipping/:cep', (req, res, next) => {
         }
     );
 });
-
+SearchProductByID: (payload, callback) => {
+    callback(
+        null,
+        products.find((product) => product.id == payload.request.id)
+    );
+},
 /**
  * Inicia o router
  */
